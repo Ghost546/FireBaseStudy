@@ -15,11 +15,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class LogInActivity extends AppCompatActivity {
 
     @BindView(R.id.field_email)
-    EditText fieldEmail;
+    EditText fieldMail;
 
     @BindView(R.id.field_password)
     EditText fieldPassword;
@@ -34,7 +35,7 @@ public class LogInActivity extends AppCompatActivity {
     String varPassword;
 
     private void signInButtonClick() {
-        if (fieldEmail.getText().toString().equals("")) {
+        if (fieldMail.getText().toString().equals("")) {
             //код если поле пусто
         } else {
             //код если текст есть
@@ -42,7 +43,7 @@ public class LogInActivity extends AppCompatActivity {
                 //код если поле пусто
             } else {
                 //код если текст есть
-                varEmail = fieldEmail.getText().toString();
+                varEmail = fieldMail.getText().toString();
                 varPassword = fieldPassword.getText().toString();
                 FirebaseAuth.getInstance()
                         .signInWithEmailAndPassword(varEmail, varPassword)
@@ -82,10 +83,11 @@ public class LogInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        ButterKnife.bind(this);
     }
 
 
-    public void onClick(View v) {
+    public void onClickY(View v) {
         switch (v.getId()) {
             case R.id.go_to_authentication_button:
                 goToAuthenticationButtonClick();
