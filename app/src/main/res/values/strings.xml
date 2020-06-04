@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FireBaseStudy</string>
+    <string name="sign_in">Вход</string>
+    <string name="authentication">Авторизация</string>
+</resources>
